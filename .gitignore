@@ -1,4 +1,67 @@
-# Build and Release Folders
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+-- Main GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "ExecutorGUI"
+gui.ResetOnSpawn = false
+gui.Parent = playerGui
+-- Toggle Button
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 100, 0, 30)
+toggleButton.Position = UDim2.new(0, 10, 0, 10)
+toggleButton.Text = "TOGGLE"
+toggleButton.Font = Enum.Font.LuckiestGuy
+toggleButton.TextSize = 14
+toggleButton.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+toggleButton.TextColor3 = Color3.new(1, 1, 1)
+toggleButton.Parent = gui
+-- Main Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 350, 0, 200)
+frame.Position = UDim2.new(0.5, -175, 0.5, -100)
+frame.BackgroundColor3 = Color3.fromRGB(85, 85, 85)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Visible = true
+frame.Parent = gui
+-- Toggle Function
+toggleButton.MouseButton1Click:Connect(function()
+frame.Visible = not frame.Visible
+end)
+-- Title Label
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundTransparency = 1
+title.Text = "SERVERSIDE OR FE BYPASS EXECUTOR"
+title.Font = Enum.Font.LuckiestGuy
+title.TextSize = 18
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Parent = frame
+-- Input Box
+local inputBox = Instance.new("TextBox")
+inputBox.Size = UDim2.new(1, -20, 0, 40)
+inputBox.Position = UDim2.new(0, 10, 0, 40)
+inputBox.PlaceholderText = "ENTER REQUIRE"
+inputBox.Text = ""
+inputBox.ClearTextOnFocus = false
+inputBox.TextColor3 = Color3.new(0, 0, 0)
+inputBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+inputBox.TextWrapped = true
+inputBox.Font = Enum.Font.LuckiestGuy
+inputBox.TextSize = 14
+inputBox.TextXAlignment = Enum.TextXAlignment.Center
+inputBox.TextYAlignment = Enum.TextYAlignment.Center
+inputBox.Parent = frame
+-- Clear Button
+local clearButton = Instance.new("TextButton")
+clearButton.Size = UDim2.new(1, -20, 0, 35)
+clearButton.Position = UDim2.new(0, 10, 0, 90)
+clearButton.Text = "CLEAR"
+clearButton.Font = Enum.Font.LuckiestGuy
+clearButton.TextSize = 18
+clearButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+clearButton.TextColor3 = Color3.new(1,# Build and Release Folders
 bin-debug/
 bin-release/
 [Oo]bj/
